@@ -1,33 +1,30 @@
-import {Image, StyleSheet, Platform, View, Text} from 'react-native';
-
-import { HelloWave } from '@/components/HelloWave';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
+import React from 'react';
+import { Image, Text, SafeAreaView, TouchableOpacity, View } from 'react-native';
 
 export default function HomeScreen() {
   return (
-    <View className="bg-red-400">
-        <Text>OwO</Text>
-    </View>
+      <SafeAreaView className="flex-1 bg-primary items-center justify-center">
+        <Image className="mb-20" source={require('../../assets/images/react-logo.png')} />
+        <Text className="text-4xl text-center mt-20 text-white font-bold">Welcome to the {'\n'} OwO chat</Text>
+        <Text className="text-lg text-center mb-5 text-white">The true and free conversation</Text>
+
+        <View className="flex flex-row justify-center items-center mt-10">
+          <TouchableOpacity className="bg-tertiary px-6 py-3 mx-10 rounded-lg">
+            <Text className="text-center text-black font-semibold">LOGIN</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity className="bg-tertiary px-6 py-3 mx-10 rounded-lg">
+            <Text className="text-center text-black font-semibold">SIGN UP</Text>
+          </TouchableOpacity>
+        </View>
+
+        <View className='mt-20 mb-0'>
+          <TouchableOpacity>
+            <Text className='font-bold text-white'>
+              How is OwO chat?
+            </Text>
+          </TouchableOpacity>
+        </View>
+      </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({
-  titleContainer: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 8,
-  },
-  stepContainer: {
-    gap: 8,
-    marginBottom: 8,
-  },
-  reactLogo: {
-    height: 178,
-    width: 290,
-    bottom: 0,
-    left: 0,
-    position: 'absolute',
-  },
-});
